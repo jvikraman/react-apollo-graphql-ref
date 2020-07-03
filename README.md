@@ -748,10 +748,10 @@ export const RemoveOrder = ({ orderId }) => (
 
 Since, we have made the `removeOrder` mutation reusable via the `<RemoveOrder />` component, other components can use this component by just passing in an `orderId` prop to specify the order to be removed.
 
-### 👏 💥 🥁 🎉 🎊 🥳 Congratulations !! we made it through the end and that's a wrap of our quick reference guide on how to use GraphQL data with React !!
+#### 👏 💥 🥁 🎉 🎊 🥳 Congratulations !! we made it through the end and that's a wrap of our quick reference guide on how to use GraphQL data with React !!
 
-### 🏆 These notes are inspired by the amazing egghead tutorials on these topics by [Eve Porcello](https://egghead.io/instructors/eve-porcello) and [Alex Banks](https://egghead.io/instructors/alex-banks). They are a great resource for anyone starting with GraphQL. Be sure to check them out on egghead.io
+#### 🏆 These notes are inspired by the amazing egghead tutorials on these topics by [Eve Porcello](https://egghead.io/instructors/eve-porcello) and [Alex Banks](https://egghead.io/instructors/alex-banks). They are a great resource for anyone starting with GraphQL. Be sure to check them out on egghead.io
 
-### 🔥 If you like, you can also check out the sample [react-apollo app](https://github.com/jvikraman/react-apollo-graphql) that demonstrates the concepts discussed in this guide.
+#### 🔥 If you like, you can also check out the sample [react-apollo app](https://github.com/jvikraman/react-apollo-graphql) that demonstrates the concepts discussed in this guide.
 
 ---

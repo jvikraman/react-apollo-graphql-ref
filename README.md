@@ -1,16 +1,16 @@
 # ⚡ Using GraphQL with React
 
-## Quick notes on how to use graphql data in react.
+## Quick notes on how to use GraphQL data in react.
 
-### 📌 Graphql endpoint and server options
+### 📌 GraphQL endpoint and server options
 
-First and foremost, to use graphql data in react, we need a graphql endpoint. We can use any of the free online enpoints like [SWAPI](https://swapi.graph.cool/) or spin-up our own local endpoint using \``apollo server`\`
+First and foremost, to use graphql data in react, we need a graphql endpoint. We can use any of the free online enpoints like [SWAPI](https://swapi.graph.cool/) or spin-up our own local endpoint using `apollo server`
 
-Check this [repo](https://github.com/jvikraman/apollo-server-ref) for a quick reference on setting up a local apollo server for our graphql needs.
+Check this [repo](https://github.com/jvikraman/apollo-server-ref) for a quick reference on how to setup a local apollo server for our graphql needs.
 
 ---
 
-## 📌 Graphql client options
+## 📌 GraphQL client options
 
 ### ✨ Basic client
 
@@ -18,6 +18,7 @@ We could do a simple non-react client using basic http request (or) head down th
 
 ```javascript
 // index.js file
+
 const endpoint = `http://localhost:4000`;
 
 const query = `
@@ -86,7 +87,7 @@ client
 
 ---
 
-### ⚛ React apollo client
+### ⚛ React Apollo client
 
 Next up, here's how to use a react apollo client.
 Spin up a react starter project using `create-react-app` or your own setup and install the following dependencies:
@@ -97,7 +98,7 @@ npm install graphql apollo-boost react-apollo
 
 From there onwards, there are several ways to consume graphql data in react:
 
-### 1️⃣ Using `ApolloProvider` and `ApolloConsumer` from `react-apollo` package along with render-prop technique.
+### 1️⃣ Using `ApolloProvider` and `ApolloConsumer` from `react-apollo` package along with render-prop technique
 
 #### Example:
 
@@ -107,7 +108,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider, ApolloConsumer } from "react-apollo";
 import gql from "graphql-tag";
 
-// Create a new apollo client using a specific endpoint
+// Create a new apollo client using a specific endpoint.
 const client = new ApolloClient({
     uri: `https://swapi.graph.cool/`;
 });
@@ -143,7 +144,7 @@ class App extends Component {
 export default App;
 ```
 
-### 2️⃣ Using `<Query />` component from `react-apollo` package.
+### 2️⃣ Using `<Query />` component from `react-apollo` package
 
 We can also use the `<Query />` component from `react-apollo` to fetch the data instead of `<ApolloConsumer />`. Using the previous example as a base, here's a modified version that retrieves a list of films from a graphql endpoint and renders them in the UI:
 
@@ -259,7 +260,8 @@ const DECREMENT_MUTATION = gql`
   }
 `;
 
-// In the app, use the <Mutation /> component to execute the mutations on the server & return the data.
+// In the app, use the <Mutation /> component to execute
+// the mutations on the server & return the data.
 const App = () => (
   <div>
     <Query query={TOTAL_COUNT_QUERY}>
@@ -433,7 +435,7 @@ const resolvers = {
 }
 ```
 
-### 💪 Below is a full-fledged example of using the mutation in a react component including retrieving and displaying the current list of orders in the UI, plus adding a new order via the `AddOrder` button:
+#### 💪 Below is a full-fledged example of using the mutation in a react component including retrieving and displaying the current list of orders in the UI, plus adding a new order via the `AddOrder` button:
 
 ```javascript
 // Queries.js file
@@ -469,6 +471,7 @@ export const TOTAL_ORDERS_WITH_STATUS_QUERY = gql`
   }
 `;
 // End of file
+
 
 // AddOrder.js file
 import React, { Component } from 'react';
@@ -555,6 +558,7 @@ export default class AddOrder extends Component {
 }
 // End of file
 
+
 // ListOrders.js file
 import React from 'react';
 
@@ -584,6 +588,7 @@ const ListOrders = ({ totalOrders, allOrders }) => {
 
 export default ListOrders;
 // End of file
+
 
 // Main App.js file
 import React from 'react';
@@ -672,7 +677,7 @@ export default class AddOrder extends Component {
 }
 ```
 
-### 💡 Similar to the `addOrder` mutation, below is an example of how to use a `removeOrder` mutation in a react component to remove orders from the list:
+#### 💡 Similar to the `addOrder` mutation, below is an example of how to use a `removeOrder` mutation in a react component to remove orders from the list:
 
 ```javascript
 // RemoveOrder.js file
@@ -746,11 +751,11 @@ export const RemoveOrder = ({ orderId }) => (
 );
 ```
 
-Since, we have made the `removeOrder` mutation reusable via the `<RemoveOrder />` component, other components can use this component by just passing in an `orderId` prop to specify the order to be removed.
+Since we have made the `removeOrder` mutation reusable via the `<RemoveOrder />` component, other components can use this component by just passing in an `orderId` prop to specify the order to be removed.
 
-#### 👏 💥 🥁 🎉 🎊 🥳 Congratulations !! we made it through the end and that's a wrap of our quick reference guide on how to use GraphQL data with React !!
+#### 👏 💥 🥁 🎉 🎊 🥳 Congratulations !! we made it through the end and that's a wrap on our quick reference guide on how to use GraphQL data with React !!
 
-#### 🏆 These notes are inspired by the amazing egghead tutorials on these topics by [Eve Porcello](https://egghead.io/instructors/eve-porcello) and [Alex Banks](https://egghead.io/instructors/alex-banks). They are a great resource for anyone starting with GraphQL. Be sure to check them out on egghead.io
+#### 🏆 These notes are inspired by the amazing egghead tutorials on these topics by [Eve Porcello](https://egghead.io/instructors/eve-porcello) and [Alex Banks](https://egghead.io/instructors/alex-banks). They are a great resource for anyone starting with GraphQL. Be sure to check them out on [egghead.io](https://egghead.io)
 
 #### 🔥 If you like, you can also check out the sample [react-apollo app](https://github.com/jvikraman/react-apollo-graphql) that demonstrates the concepts discussed in this guide.
 
